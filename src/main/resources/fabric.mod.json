@@ -4,11 +4,7 @@
   "version": "${version}",
   "name": "Inventory Tabs",
   "description": "Adds tabs to your inventory that lead to nearby blocks.",
-  "authors": [
-    "KQP",
-    "LiamMCW",
-    "Andrew6rant (Andrew Grant)"
-  ],
+  "authors": [ "KQP", "LiamMCW", "Andrew6rant (Andrew Grant)" ],
   "contact": {
     "homepage": "https://github.com/Andrew6rant/inventorytabs",
     "sources": "https://github.com/Andrew6rant/inventorytabs",
@@ -18,31 +14,19 @@
   "icon": "assets/inventorytabs/icon.png",
   "environment": "client",
   "entrypoints": {
-    "main": [
-      "com.kqp.inventorytabs.init.InventoryTabs"
-    ],
-    "client": [
-      "com.kqp.inventorytabs.init.InventoryTabsClient"
-    ],
-    "modmenu": [
-      "com.kqp.inventorytabs.init.InventoryTabsModMenu"
-    ]
+    "main": [ "com.kqp.inventorytabs.init.InventoryTabs" ],
+    "client": [ "com.kqp.inventorytabs.init.InventoryTabsClient" ],
+    "modmenu": [ "com.kqp.inventorytabs.init.InventoryTabsModMenu" ]
   },
-  "mixins": [
-    "inventorytabs.mixins.json"
-  ],
+  "mixins": [ "inventorytabs.mixins.json" ],
   "accessWidener": "inventorytabs.accesswidener",
   "depends": {
-    "fabricloader": ">=0.14.19",
-    "fabric-api": ">=0.81.2",
-    "minecraft": ">=1.20-beta.2",
+    "fabricloader": ">=0.14.21",
+    "fabric-api": "*",
+    "minecraft": "~1.20.1",
     "cloth-config2": "*"
   },
-  "custom": {
-    "modmenu": [
-      "com.kqp.inventorytabs.init.InventoryTabsConfig"
-    ]
-  },
+  "custom": { "modmenu": [ "com.kqp.inventorytabs.init.InventoryTabsConfig" ] },
   "suggests": {
     "biginv": "*",
     "playerex": "*",
