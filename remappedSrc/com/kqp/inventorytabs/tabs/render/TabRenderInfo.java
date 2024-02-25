@@ -15,6 +15,4 @@ public class TabRenderInfo {
     public int x, y;
     public int texW, texH, texU, texV;
     public int itemX, itemY;
-    public boolean topRow;
-    public boolean active;
 }

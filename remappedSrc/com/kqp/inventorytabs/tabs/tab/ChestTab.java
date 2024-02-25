@@ -41,7 +41,7 @@ public class ChestTab extends SimpleBlockTab {
     public boolean shouldBeRemoved() {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
 
-        if (ChestBlock.isChestBlocked(player.getWorld(), blockPos)) {
+        if (ChestBlock.isChestBlocked(player.method_48926(), blockPos)) {
             return true;
         }
 
@@ -68,7 +68,7 @@ public class ChestTab extends SimpleBlockTab {
     }
 
     public ItemStack getItemFrame() {
-        World world = MinecraftClient.getInstance().player.getWorld();
+        World world = MinecraftClient.getInstance().player.method_48926();
         itemStack = new ItemStack(world.getBlockState(blockPos).getBlock());
         BlockPos doubleChestPos = ChestUtil.isDouble(world, blockPos) ? getOtherChestBlockPos(world, blockPos)
                 : blockPos;

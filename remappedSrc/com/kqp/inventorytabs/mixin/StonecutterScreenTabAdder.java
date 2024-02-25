@@ -12,12 +12,14 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.LoomScreen;
+import net.minecraft.client.gui.screen.ingame.StonecutterScreen;
+import net.minecraft.client.util.math.MatrixStack;
 
 @Environment(EnvType.CLIENT)
-@Mixin(LoomScreen.class)
-public class LoomScreenTabAdder {
-    @Inject(method = "drawBackground", at = @At("RETURN"))
+@Mixin(StonecutterScreen.class)
+public class StonecutterScreenTabAdder {
+    @Inject(method = "drawBackground", at = @At(value = "INVOKE", shift = At.Shift.AFTER, target = "Lnet/minecraft/client/gui/screen/ingame/StonecutterScreen;renderBackground(Lnet/minecraft/client/gui/DrawContext;)V"))
+    // net.minecraft/client/gui/screens/inventory/StonecutterScreen
     protected void drawBackgroundTabs(DrawContext context, float delta, int mouseX, int mouseY, CallbackInfo ci) {
         MinecraftClient client = MinecraftClient.getInstance();
         TabManager tabManager = ((TabManagerContainer) client).getTabManager();

@@ -17,8 +17,8 @@ import net.minecraft.client.gui.screen.ingame.LoomScreen;
 @Environment(EnvType.CLIENT)
 @Mixin(LoomScreen.class)
 public class LoomScreenTabAdder {
-    @Inject(method = "drawBackground", at = @At("RETURN"))
-    protected void drawBackgroundTabs(DrawContext context, float delta, int mouseX, int mouseY, CallbackInfo ci) {
+    @Inject(method = "drawBackground", at = @At(value = "INVOKE", shift = At.Shift.AFTER, target = "Lnet/minecraft/client/gui/screen/ingame/LoomScreen;renderBackground(Lnet/minecraft/client/gui/DrawContext;)V"))
+    protected void drawBackgroundTabs(DrawContext context, float delta, int mouseX, int mouseY) {
         MinecraftClient client = MinecraftClient.getInstance();
         TabManager tabManager = ((TabManagerContainer) client).getTabManager();
 

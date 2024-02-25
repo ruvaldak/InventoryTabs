@@ -140,23 +140,12 @@ public class TabRenderer {
 
             context.drawText(MinecraftClient.getInstance().textRenderer, text, x, y, color, false);
 
+            // RenderSystem.popMatrix();
         }
     }
 
     private void renderTab(DrawContext context, TabRenderInfo tabRenderInfo) {
         HandledScreen<?> currentScreen = tabManager.getCurrentScreen();
-
-        if (tabManager.getCurrentTab() == tabRenderInfo.index) {
-            if (tabRenderInfo.topRow) {
-                context.drawBorder(tabRenderInfo.x, tabRenderInfo.y, tabRenderInfo.texW + 1, tabRenderInfo.texH,
-                        0xAAF3434F);
-
-            } else {
-                context.drawBorder(tabRenderInfo.x, tabRenderInfo.y, tabRenderInfo.texW + 1, tabRenderInfo.texH,
-                        0xAAF3434F);
-            }
-        }
-
         tabRenderInfo.tabReference.renderTabIcon(context, tabRenderInfo, currentScreen);
     }
 
@@ -261,8 +250,6 @@ public class TabRenderer {
 
                 tabInfo.itemX = tabInfo.x;
                 tabInfo.itemY = tabInfo.y;
-
-                tabInfo.topRow = topRow;
 
                 // Apply rendering hints
                 if (currentScreen instanceof TabRenderingHints) {

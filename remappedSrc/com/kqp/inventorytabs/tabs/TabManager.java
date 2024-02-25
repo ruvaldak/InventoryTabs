@@ -47,10 +47,6 @@ public class TabManager {
 
     public final TabRenderer tabRenderer;
 
-    public int getCurrentTab() {
-        return tabs.indexOf(this.currentTab);
-    }
-
     public TabManager() {
         this.tabs = new ArrayList<>();
         this.tabRenderer = new TabRenderer(this);

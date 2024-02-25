@@ -30,7 +30,7 @@ public class SimpleBlockTab extends Tab {
     public final BlockPos blockPos;
 
     public SimpleBlockTab(Identifier blockId, BlockPos blockPos) {
-        super(new ItemStack(MinecraftClient.getInstance().player.getWorld().getBlockState(blockPos).getBlock()));
+        super(new ItemStack(MinecraftClient.getInstance().player.method_48926().getBlockState(blockPos).getBlock()));
         this.blockId = blockId;
         this.blockPos = blockPos;
     }
@@ -61,7 +61,7 @@ public class SimpleBlockTab extends Tab {
     public boolean shouldBeRemoved() {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
 
-        if (!Registries.BLOCK.getId(player.getWorld().getBlockState(blockPos).getBlock()).equals(blockId)) {
+        if (!Registries.BLOCK.getId(player.method_48926().getBlockState(blockPos).getBlock()).equals(blockId)) {
             return true;
         }
 
@@ -81,7 +81,7 @@ public class SimpleBlockTab extends Tab {
 
     @Override
     public Text getHoverText() {
-        World world = MinecraftClient.getInstance().player.getWorld();
+        World world = MinecraftClient.getInstance().player.method_48926();
 
         BlockEntity blockEntity = world.getBlockEntity(blockPos);
 
