@@ -79,3 +79,4 @@ If your screen's GUI dynamically changes (in the case of a recipe book opening),
 
 ## Credits
 This 1.18 and 1.19 port is based on LiamMCW's fork of the original mod by cakewhip. Full credits can be found at https://github.com/Andrew6rant/inventorytabs/graphs/contributors.
+ 
